@@ -1,124 +1,149 @@
-
-
-    Home
-    CSS
-    RWD Media Queries
-    Tryit: Using media queries 
-
-Result Size: 852 x 553
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Document</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <style>
-
         td{
-
             text-align: center;
-
         }
-
         button{
-
             background-color: teal;
-
             color: white;
-
             width: 60%;
-
             padding: 5px;
-
         }
-
         input{
-
             align-items: center;
-
             text-align: center;
+        }
+        span{
+            background-color: whitesmoke;
+         }
+         table{
+             width: auto;
+         }
+         .container{
+         	width:560px;
+             align-items: center;
+             vertical-align: auto;
+             border: tomato;
+             box-sizing: border-box;
+         }
+         table{
+             background-color: rgb(226, 224, 224);
+             width: 55%;
+             /* height: 30vh; */
+         }
+         td{
+             padding:8px;
+         }
+         input{
+             padding: 6px;
+             width: 40%;
+         }
+         body{
+             background-image:url(https://images.unsplash.com/photo-1515890435782-59a5bb6ec191?ixlib=rb-1.2.1&w=1000&q=80);
+             background-repeat: no-repeat;
+             height:100vh;
+             width: 100%;
+             background-size: cover;
+             background-position: center;
+             
+         }
+         #result{
+            font-size: larger;
+         }
+         
+         @media only screen and (max-width: 600px) {
+          .container{
+          	width:360px;
+             align-items: center;
+             vertical-align: auto;
+             border: tomato;
+             box-sizing: border-box;
+         }
+ 
+}
+         
+    </style>
+</head>
+<body>
+    
+    <center>
+        <br><br><br>
+        <div class="container">
+            <table border="0" style="width:90%;height: 12%;">
+                <tr>
+                    <td style="background-color: rgb(247, 97, 71);color: white;padding-top: 8px;">
+                        <h3>Calculate Your Love</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 19px;" >
+                        <span><input type="text" id="yname" placeholder="Your Name" style="width: 70%;"></span>
+                        <span><h1>+</h1></span>
+                        <span><input type="text" id="lname" placeholder="Your Love" style="width: 70%;"></span>
+                    </td>
 
+                </tr>
+                <tr>
+                    <td style="padding-top: 7px;">
+                    <br>
+                        <button id="Calculate" onclick="loveCalculate()">Calculate</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 8px;border: tomato;text-align: center;">
+                        <div id="result" style="padding-top: 8px;">Percentage</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style=" background-color: whitesmoke;padding-top: 8px;">
+                        <span>God Bless Your Relationship</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+    <script>
+        function loveCalculate()
+        {
+            var n1=document.getElementById("yname").value;
+            var n2=document.getElementById("lname").value;
+           var l1=n1.length;
+            var l2=n2.length;
+            var res=l1+l2;
+            if(res>=15 && res<20)
+            {
+                res=res*5;
+                
+            }
+            else if(res>0 && res<15)
+            {
+                res=(res*6);
+                res+=15;
+            }
+             else{
+                res=res*4;
+            }
+            document.getElementById("result").innerHTML=res+"%";
         }
 
-        span{
+            
+    </script>
+</body>
+</html>
+<!-- var res=Math.random() * 100;
+            res =Math.floor(res);
+            if(res<50)
+            {
+                res+=40;
+            }
+            document.getElementById("result").value=res+" %";
+       -->
 
-            background-color: whitesmoke;
-
-         }
-
-         table{
-
-             width: auto;
-
-         }
-
-         .container{
-
-            width:560px;
-
-             align-items: center;
-
-             vertical-align: auto;
-
-             border: tomato;
-
-             box-sizing: border-box;
-
-         }
-
-         table{
-
-             background-color: rgb(226, 224, 224);
-
-             width: 55%;
-
-             /* height: 30vh; */
-
-         }
-
-         td{
-
-             padding:8px;
-
-         }
-
-         input{
-
-             padding: 6px;
-
-             width: 40%;
-
-         }
-
-         body{
-
-             background-image:url(https://images.unsplash.com/photo-1515890435782-59a5bb6ec191?ixlib=rb-1.2.1&w=1000&q=80);
-
-             background-repeat: no-repeat;
-
-             height:100vh;
-
-             width: 100%;
-
-             background-size: cover;
-
-             background-position: center;
-
-             
-
-         }
-
-         #result{
-
-            font-size: larger;
-
-
+   
